@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <div className="logo">LOGO</div>
+      <div className="input-group">
+        <label>닉네임을 입력해주세요</label>
+        <input type="text" placeholder="닉네임" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="input-group">
+        <label>비밀번호를 입력해주세요</label>
+        <input type="password" placeholder="비밀번호" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <p className="error">닉네임과 비밀번호를 확인해주세요</p>
+
+      <button className="login-button">접속하기</button>
+
+      <div className="signup">계정 생성하기 {">"}</div>
+    </div>
+  );
 }
 
-export default App
+export default App;

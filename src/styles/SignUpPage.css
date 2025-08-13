@@ -1,0 +1,114 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f5f5f5;
+}
+
+.container {
+  width: 393px;
+  height: 852px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-family: "Pretendard", sans-serif;
+}
+
+.sub-header {
+  width: 393px;
+  height: 52px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-sizing: border-box;
+  gap: 8px;
+}
+
+.back-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #3b3b3b;
+  flex: 1;
+  text-align: center;
+}
+
+.options {
+  flex-grow: 1;
+  padding: 0 20px;
+  margin-top: 88px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 58px;
+}
+
+.option-text {
+  font-weight: 600;
+  font-size: 24px;
+  color: #000000;
+  line-height: 100%;
+  text-align: center;
+}
+
+.option-text.long {
+  width: 234px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  background: #ffffff;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8L7 11L12 5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.next-btn {
+  width: 348px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background: #d9d9d9;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: not-allowed;
+}
+
+.next-btn.active {
+  background: #000000;
+  cursor: pointer;
+}

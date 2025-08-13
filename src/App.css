@@ -1,42 +1,90 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 375px; /* 아이폰 화면 폭 */
+  min-height: 812px; /* 아이폰 X 높이 */
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 로고 */
+.logo {
+  width: 200px;
+  height: 90px;
+  background-color: #ddd; /* 임시 로고 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbb;
+  font-weight: bold;
+  margin-top: 120px; /* 화면 위 여백 */
+  margin-bottom: 200px; /* 로고-입력창 간격 */
+}
+
+/* 입력 그룹 */
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 에러 메시지 */
+.error {
+  color: #ff5a00;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  width: 100%;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 접속하기 버튼 */
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 회원가입 */
+.signup {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.signup span {
+  font-size: 18px;
+  vertical-align: middle;
 }

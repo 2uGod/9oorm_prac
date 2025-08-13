@@ -1,0 +1,71 @@
+:root{
+    --bg1:#f6f7f9; --bg2:#eef1f6;
+    --panel:#fff; --text:#111; --muted:#6b7280; --line:#e5e7eb;
+    --focus:rgba(17,17,17,.08); --dark:#111; --ok:#059669; --err:#ef4444;
+    --r-lg:14px; --shadow:0 12px 40px rgba(0,0,0,.08), 0 2px 10px rgba(0,0,0,.04);
+  }
+  *{box-sizing:border-box}
+  html,body,#root{height:100%; margin:0}
+  body{font-family:system-ui,-apple-system,"Noto Sans KR",Roboto,Arial,sans-serif; color:var(--text)}
+  
+  /* 부모 레이아웃의 max-width/overflow 영향을 완전히 무시하기 위해 fixed 사용 */
+  .su-viewport--fixed{
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;   /* 모바일 주소창 대응 */
+    z-index: 9999;               /* 헤더/사이드 위로 */
+    background: linear-gradient(120deg,var(--bg1),var(--bg2));
+  }
+  
+  /* 가운데 정렬 + 내부 스크롤 */
+  .su-container{
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    padding: clamp(16px, 4vw, 48px);
+    overflow: auto;
+  }
+  
+  /* 중앙 카드 */
+  .su-card{
+    width: min(720px, 92vw);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: clamp(20px, 3vw, 32px);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  
+  .su-title{font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; margin: 4px 0 8px}
+  .su-field{display: flex; flex-direction: column; gap: 10px}
+  .su-label{font-size: 14px; color: var(--muted)}
+  .su-row{display: grid; grid-template-columns: 1fr auto; gap: 10px}
+  
+  .su-input{
+    height: 50px; padding: 0 14px; border: 1px solid var(--line); border-radius: var(--r-lg);
+    background: #fff; color: #111; font-size: 16px; outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .su-input::placeholder{ color: #b9c1cd }
+  .su-input:focus{ border-color:#cbd5e1; box-shadow: 0 0 0 6px var(--focus) }
+  
+  .su-btn{
+    height: 50px; padding: 0 16px; border-radius: var(--r-lg);
+    border: 1px solid var(--line); background: #fff; color: var(--text);
+    font-weight: 700; cursor: pointer; transition: opacity .15s, transform .06s;
+  }
+  .su-btn:active{ transform: translateY(1px) }
+  .su-btn--dark{ background: var(--dark); color:#fff; border-color: var(--dark) }
+  .su-btn[disabled]{ background:#eef0f3; color:#a3a3a3; border-color:#eef0f3; cursor:not-allowed }
+  
+  .su-help{ font-size: 13px }
+  .su-help--ok{ color: var(--ok) }
+  .su-help--error{ color: var(--err) }
+  
+  .su-submit{ width: 100%; margin-top: 6px }
+  
+  @media (max-width: 560px){
+    .su-row{ grid-template-columns: 1fr }
+  }
+  

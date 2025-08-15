@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "../styles/SignUpPage.css"
 
 export default function App() {
   const [student, setStudent] = useState(false);
